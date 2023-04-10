@@ -35,6 +35,7 @@
     "import/prefer-default-export": "off",
 
     "no-param-reassign": ["error", { "props": false }],
-    "no-console": "error"
+    "no-console": "error",
+    "no-restricted-exports": "off"
   }
 }
