@@ -1,18 +1,23 @@
-import Image from 'next/image';
+'use client';
+
+import { ReactNode } from 'react';
 
 import { Wrapper } from './styles';
 
-function Card() {
+type Props = {
+  background?: string;
+  children?: ReactNode;
+};
+
+function Card({ background, children }: Props) {
   return (
-    <Wrapper>
-      <Image
-        alt="Picture of the author"
-        height={500}
-        src="https://s3.amazonaws.com/my-bucket/profile.png"
-        width={500}
-      />
-    </Wrapper>
+    <Wrapper background={(background && background) || ''}>{children}</Wrapper>
   );
 }
+
+Card.defaultProps = {
+  background: '#424242',
+  children: null,
+};
 
 export default Card;
